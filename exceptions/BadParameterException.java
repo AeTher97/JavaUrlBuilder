@@ -1,4 +1,4 @@
-package com.microhard.plutus.BankApi.get.url.builder.exceptions;
+package com.Aether97.JavaUrlBuilder.exceptions;
 
 public class BadParameterException extends GetUrlCreatorException{
     private String message = "Parameters are invalid";

@@ -1,12 +1,11 @@
-package com.microhard.plutus.BankApi.get.url.builder;
+package com.Aether97.JavaUrlBuilder;
 
-import javax.validation.constraints.NotNull;
 
 public class Parameter {
     private String key;
     private String value;
 
-    public Parameter(@NotNull String key,@NotNull String value){
+    public Parameter(String key,String value){
         this.key = key;
         this.value = value;
     }

@@ -1,21 +1,21 @@
-package com.microhard.plutus.BankApi.get.url.builder;
+package com.Aether97.JavaUrlBuilder;
 
-import com.microhard.plutus.BankApi.get.url.builder.exceptions.BadParameterException;
-import com.microhard.plutus.BankApi.get.url.builder.exceptions.BadUrlException;
-import com.microhard.plutus.BankApi.get.url.builder.exceptions.GetUrlCreatorException;
+import com.Aether97.JavaUrlBuilder.exceptions.BadUrlException;
+import com.Aether97.JavaUrlBuilder.exceptions.GetUrlCreatorException;
+import com.Aether97.JavaUrlBuilder.exceptions.BadParameterException;
+import com.sun.istack.internal.NotNull;
 
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 
 
 public class GetUrl {
-    @NotNull
     private String serverUrl;
-    @NotNull
     private ArrayList<Parameter> parameters;
     private ArrayList<String> path;
 
     public GetUrl(String serverUrl) throws GetUrlCreatorException {
+        if (serverUrl == null)
+            throw new BadUrlException("Url is null!");
         if(!serverUrl.startsWith("http://") && !serverUrl.startsWith("https://"))
                 throw new BadUrlException("Url doesn't start with http:// or https://");
         if(!serverUrl.contains("."))
